@@ -136,7 +136,7 @@ class ModelExporter:
             onnx_model, _ = tf2onnx.convert.from_keras(
                 self.model, 
                 input_signature=(tf.TensorSpec((None,) + MODEL_CONFIG["input_shape"], tf.float32),),
-                opset=13
+                opset=10
             )
             
             # Save model
