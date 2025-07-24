@@ -21,8 +21,12 @@ def load_model():
     if not MODEL_PATH.exists():
         st.error(f"Model file not found at {MODEL_PATH}")
         return None
-    session = ort.InferenceSession(str(MODEL_PATH))
-    return session
+    try:
+        session = ort.InferenceSession(str(MODEL_PATH), providers=['CPUExecutionProvider'])
+        return session
+    except Exception as e:
+        st.error(f"Failed to load ONNX model: {e}")
+        return None
 
 def preprocess_image(image, target_size=(224, 224)):
     img = image.convert("RGB")
