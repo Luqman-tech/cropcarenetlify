@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import cv2
+from PIL import Image
 import onnxruntime as ort
 from pathlib import Path
 
@@ -25,15 +25,14 @@ def load_model():
     return session
 
 def preprocess_image(image, target_size=(224, 224)):
-    img = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    img = cv2.resize(img, target_size)
-    img = img.astype(np.float32) / 255.0
+    img = image.convert("RGB")
+    img = img.resize(target_size)
+    img = np.array(img).astype(np.float32) / 255.0
     img = np.expand_dims(img, axis=0)
     return img
 
 if uploaded_file is not None:
-    file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
-    image = cv2.imdecode(file_bytes, 1)
+    image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
 
     st.write("Running inference...")
