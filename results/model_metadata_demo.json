@@ -1,0 +1,75 @@
+{
+  "model_info": {
+    "name": "Crop Disease Detection Model (Demo)",
+    "version": "1.0.0-demo",
+    "description": "AI-powered crop disease detection for smallholder farmers",
+    "sdg_focus": "SDG 2 - Zero Hunger",
+    "architecture": "MobileNetV2 (simulated)",
+    "input_shape": [
+      224,
+      224,
+      3
+    ],
+    "num_classes": 33,
+    "class_names": [
+      "Apple___Apple_scab",
+      "Apple___Black_rot",
+      "Apple___Cedar_apple_rust",
+      "Apple___healthy",
+      "Cherry___healthy",
+      "Cherry___Powdery_mildew",
+      "Corn___Cercospora_leaf_spot Gray_leaf_spot",
+      "Corn___Common_rust",
+      "Corn___healthy",
+      "Corn___Northern_Leaf_Blight",
+      "Grape___Black_rot",
+      "Grape___Esca_(Black_Measles)",
+      "Grape___healthy",
+      "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "Peach___Bacterial_spot",
+      "Peach___healthy",
+      "Pepper_bell___Bacterial_spot",
+      "Pepper_bell___healthy",
+      "Potato___Early_blight",
+      "Potato___healthy",
+      "Potato___Late_blight",
+      "Strawberry___healthy",
+      "Strawberry___Leaf_scorch",
+      "Tomato___Bacterial_spot",
+      "Tomato___Early_blight",
+      "Tomato___healthy",
+      "Tomato___Late_blight",
+      "Tomato___Leaf_Mold",
+      "Tomato___Septoria_leaf_spot",
+      "Tomato___Spider_mites Two-spotted_spider_mite",
+      "Tomato___Target_Spot",
+      "Tomato___Tomato_mosaic_virus",
+      "Tomato___Tomato_Yellow_Leaf_Curl_Virus"
+    ]
+  },
+  "training_info": {
+    "dataset": "PlantVillage Dataset (simulated)",
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "loss_function": "Categorical Crossentropy"
+  },
+  "export_info": {
+    "tflite_path": "models/crop_disease_model_demo.tflite",
+    "onnx_path": "models/crop_disease_model_demo.onnx",
+    "disease_info_path": "models/disease_info_demo.json"
+  },
+  "usage_info": {
+    "input_format": "RGB image (224x224)",
+    "output_format": "Probability distribution over classes",
+    "offline_capable": true,
+    "mobile_optimized": true
+  },
+  "ethical_considerations": {
+    "bias_mitigation": "Trained on diverse crop images from multiple regions",
+    "environmental_impact": "Lightweight model reduces energy consumption",
+    "accessibility": "Designed for offline use in low-connectivity areas",
+    "transparency": "Open source with clear documentation"
+  }
+}

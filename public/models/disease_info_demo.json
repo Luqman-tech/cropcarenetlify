@@ -1,0 +1,27 @@
+{
+  "Apple___Apple_scab": {
+    "symptoms": "Dark, olive-green to brown spots on leaves and fruit",
+    "treatment": "Apply fungicides, remove infected leaves, improve air circulation",
+    "prevention": "Plant resistant varieties, maintain tree health, proper spacing"
+  },
+  "Apple___Black_rot": {
+    "symptoms": "Black, sunken lesions on fruit and leaves",
+    "treatment": "Remove infected parts, apply fungicides, sanitize tools",
+    "prevention": "Prune properly, avoid overhead irrigation, clean orchard floor"
+  },
+  "Apple___healthy": {
+    "symptoms": "No visible disease symptoms",
+    "treatment": "Continue current care practices",
+    "prevention": "Maintain good cultural practices, regular monitoring"
+  },
+  "Tomato___Late_blight": {
+    "symptoms": "Dark, water-soaked lesions on leaves and stems",
+    "treatment": "Apply fungicides immediately, remove infected plants",
+    "prevention": "Plant resistant varieties, avoid overhead irrigation"
+  },
+  "Tomato___healthy": {
+    "symptoms": "No visible disease symptoms",
+    "treatment": "Continue current care practices",
+    "prevention": "Maintain good cultural practices, regular monitoring"
+  }
+}
